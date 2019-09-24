@@ -1,2 +1,2 @@
 
-<video src="http://maoyan.botue.com/video-1.mp4" controls autoplay></video>
+<video src="{{movieId.id}}" controls autoplay></video>

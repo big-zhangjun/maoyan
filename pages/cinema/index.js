@@ -1,3 +1,22 @@
 Page({
-    
+      // 获取影院
+  getCinemaInfo(){
+    wx.request({
+      url:"https://wx.maoyan.com/hostproxy/mmcs/cinema/v1/select/cinemas.json",
+      data:{
+        cityId:20,
+        limit:12,
+        offset:0,
+        channelId:40000,
+        lng:113.34645080566406,
+        lat:23.186687469482422
+      },
+      success(res){
+        console.log(res)
+      }
+    })
+  },
+  onLoad(){
+      this.getCinemaInfo()
+  }
 });

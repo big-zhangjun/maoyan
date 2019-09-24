@@ -4,7 +4,8 @@
     "pages/movie/detail",
     "pages/movie/video",
     "pages/cinema/index",
-    "pages/center/index"
+    "pages/center/index",
+    "pages/search/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#e54847",

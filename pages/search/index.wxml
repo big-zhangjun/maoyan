@@ -1,0 +1,50 @@
+<!-- 组件模板 -->
+<view class="wrapper">
+    <slot></slot>
+    <view class='tit_seabox'>
+        <view class="tit_seabox_bar {{addflag?'tit_seabox_add':''}} {{searchflag?'tit_start_search':''}}">
+            <icon type='search' size="32rpx"></icon>
+            <input type="text" bindinput="searchList" bindconfirm="endsearchList" bindfocus='getfocus' bindblur="blursearch" confirm-type='search' value='{{searchstr}}' placeholder='请输入...' />
+            <icon bindtap='activity_clear' wx:if="{{searchflag}}" type='clear' size="28rpx"></icon>
+        </view>
+        <view wx:if="{{searchflag}}" bind:tap='cancelsearch' class="activity_seabtn">取消</view>
+    </view>
+</view>
+<!-- 搜索列表 -->
+<view wx:if="{{movies}}">
+    <view class="searchType">电影/电视剧/综艺</view>
+    <view class="searchList" wx:for="{{movies}}" wx:key="{{item.id}}">
+        <view class="list">
+            <view>
+                <image src="{{item.img}}" />
+            </view>
+            <view class="listInfo">
+                <view class="title">{{item.nm}}</view>
+                <view class="info">{{item.enm}}</view>
+                <view class="info">{{item.cat}}</view>
+                <view class="info">{{item.rt}}</view>
+            </view>
+            <view class="rightBtn">
+                <block wx:if="{{item.globalReleased}}">
+                    <text class="likeWatch">{{item.sc}}分</text>
+                </block>
+                <block wx:else>
+                    <text class="likeWatch">{{item.wish}}人</text>
+                    <text class="likeWatch like">想看</text>
+                </block>
+                <button class="btn {{item.globalReleased?'btnBy':'btnLike'}}" type="primary">
+                    {{item.globalReleased?'购买':'想看'}}
+                </button>
+            </view>
+        </view>
+    </view>
+    <view class="noMore">没有更多了...</view>
+</view>
+<!-- 搜索历史 -->
+<view class="searchHistroy">
+    <view class="histroyList">
+        <view class=""></view>
+        <view >攀登者</view>
+        <view class=""></view>
+    </view>
+</view>

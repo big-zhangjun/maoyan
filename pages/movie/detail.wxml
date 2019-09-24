@@ -2,25 +2,25 @@
 <!-- 简介 -->
 <view class="detail">
   <!-- 背景滤镜 -->
-  <div class="filter" style="background-image: url(https://maoyan2.oss-cn-beijing.aliyuncs.com/movie-21.jpg)"></div>
+  <div class="filter" style="background-image: url({{movieList.albumImg}})"></div>
   <view class="wrap">
     <!-- 封面 -->
-    <navigator url="./video">
+    <navigator url="./video?id={{movieList.videourl}}">
       <text class="play"></text>
-      <image src="https://maoyan2.oss-cn-beijing.aliyuncs.com/movie-21.jpg"></image>
+      <image src="{{movieList.img}}"></image>
     </navigator>
     <!-- 影片信息 -->
     <view class="meta">
-      <text class="name">侏罗纪世界2</text>
-      <text class="en">Jurassic World: Fallen Kingdom</text>
+      <text class="name">{{movieList.nm}}</text>
+      <text class="en">{{movieList.enm}}</text>
       <text class="rank">
         <text class="pic"></text>
-        <text class="num">7.9</text>
+        <text class="num">{{movieList.sc}}</text>
       </text>
-      <text class="count">(38.8万人评)</text>
-      <text class="type">动作,冒险,科幻</text>
-      <text class="">美国/128分钟</text>
-      <text class="date">2018-06-15大陆上映</text>
+      <text class="count">({{movieList.snum}}万人评)</text>
+      <text class="type">{{movieList.cat}}</text>
+      <text class="">{{movieList.src}}/{{movieList.dur}}分钟</text>
+      <text class="date">{{movieList.pubDesc}}</text>
     </view>
     <!-- 操作 -->
     <view class="action">
@@ -38,7 +38,8 @@
 <!-- 简介 -->
 <view class="brief {{spread ? 'spread' : ''}}">
   <view class="wrap">
-  侏罗纪世界主题公园及豪华度假村被失控的恐龙们摧毁已有三年。如今，纳布拉尔岛已经被人类遗弃，岛上幸存的恐龙们在丛林中自给自足。当岛上的休眠火山开始活跃以后，欧文（克里斯·帕拉特 饰）与克莱尔（布莱丝·达拉斯·霍华德 饰）发起了一场运动，想要保护岛上幸存的恐龙们免于灭绝。欧文一心想要找到自己依然失踪在野外的迅猛龙首领布鲁，克莱尔如今也尊重起这些生物，以保护它们为己任。两人在熔岩开始喷发时来到了危险的小岛，他们的冒险也揭开了一个可能让地球回到史前时代般混乱秩序的阴谋。</view>
+  {{movieList.dra}}
+  </view>
   <text class="more" bind:tap="spread"></text>
 </view>
 
