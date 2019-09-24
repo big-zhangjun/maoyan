@@ -156,3 +156,15 @@ page {
   color: #999;
   line-height: 100rpx;
 }
+.histroyList {
+  display: flex;
+}
+.icon-clock {
+  font-size:30rpx;
+  color: #999;
+  font-weight: 200;
+}
+.histitle {
+  font-size: 30rpx;
+  color: #333
+}

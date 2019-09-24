@@ -44,7 +44,8 @@
 <view class="searchHistroy">
     <view class="histroyList">
         <view class=""></view>
-        <view >攀登者</view>
+        <view class="icon-clock"></view>
+        <view class="histitle">攀登者</view>
         <view class=""></view>
     </view>
 </view>
